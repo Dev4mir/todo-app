@@ -7,7 +7,12 @@ $white-color: #fff;
 
 body {
   min-height: 100vh;
+}
+app-login,
+app-signup {
   background-color: $green-color;
+  min-height: 100vh;
+  display: block;
 }
 .main-auth-div {
   width: 300px;
