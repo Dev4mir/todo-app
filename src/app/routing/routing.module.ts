@@ -5,6 +5,8 @@ import { LoginComponent } from "../components/login/login.component";
 import { SignupComponent } from "../components/signup/signup.component";
 import { TasksComponent } from "../components/tasks-module/tasks/tasks.component";
 
+import { AuthGuard } from "./../guards/auth-guard/auth-guard.guard";
+
 // init routes for the routing
 const routes: Routes = [
   {
@@ -17,7 +19,9 @@ const routes: Routes = [
   },
   {
     path: "",
-    component: TasksComponent
+    component: TasksComponent,
+    // add guard to make sure that route won't active untill the user is authenticated
+    canActivate: [AuthGuard]
   }
 ];
 

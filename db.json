@@ -1,6 +1,12 @@
 {
   "users": [
-    { "id": 1, "name": "amir", "email": "amir@gmail.com", "password": "123" }
+    {
+      "id": 1,
+      "name": "amir",
+      "email": "amir@gmail.com",
+      "password": "123",
+      "token": "Ac95ew8rXcv7"
+    }
   ],
   "todos": [
     { "id": 1, "body": "some comment", "done": false, "UID": 1 },
