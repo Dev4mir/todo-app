@@ -1,3 +1,22 @@
-<p>
-  login works!
-</p>
+<div class="main-auth-div">
+  <div class="app-name">
+    <mat-icon class="list-icon" svgIcon="list"></mat-icon>
+    <div class="name-text">
+      <h2>TODO LIST</h2>
+      <p>Be more productive</p>
+    </div>
+  </div>
+  <div class="form-div">
+    <form class="todo-form" [formGroup]="loginForm" (ngSubmit)="login()">
+      <input formControlName="email" placeholder="Email">
+      <input formControlName="password" placeholder="Password" type="password">
+      <button class="button-form success" [disabled]="!loginForm.valid">
+        Login
+        <span class="icon-round">
+          <mat-icon class="arrow-forward-icon" svgIcon="arrow-forward"></mat-icon>
+        </span>
+      </button>
+    </form>
+    <div class="form-footer">Not registered? <a class="another-option" routerLink="/signup">Create an account</a></div>
+  </div>
+</div>
