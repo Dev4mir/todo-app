@@ -3,7 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { LoginComponent } from "../components/login/login.component";
 import { SignupComponent } from "../components/signup/signup.component";
-import { TasksComponent } from "../components/tasks-module/tasks/tasks.component";
+import { TodosComponent } from "../components/todos-module/todos/todos.component";
 
 import { AuthGuard } from "./../guards/auth-guard/auth-guard.guard";
 
@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    component: TasksComponent,
+    component: TodosComponent,
     // add guard to make sure that route won't active untill the user is authenticated
     canActivate: [AuthGuard]
   }

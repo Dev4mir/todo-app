@@ -10,18 +10,18 @@ import { LoginComponent } from "./components/login/login.component";
 
 import { RoutingModule } from "./routing/routing.module";
 import { SignupComponent } from "./components/signup/signup.component";
-import { TaskComponent } from "./components/tasks-module/task/task.component";
-import { TasksComponent } from "./components/tasks-module/tasks/tasks.component";
-import { AddTaskComponent } from "./components/tasks-module/add-task/add-task.component";
+import { AddTodoComponent } from "./components/todos-module/add-todo/add-todo.component";
+import { TodoComponent } from "./components/todos-module/todo/todo.component";
+import { TodosComponent } from "./components/todos-module/todos/todos.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    TaskComponent,
-    TasksComponent,
-    AddTaskComponent
+    AddTodoComponent,
+    TodoComponent,
+    TodosComponent
   ],
   imports: [
     BrowserModule,
