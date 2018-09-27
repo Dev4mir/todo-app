@@ -1,10 +1,24 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { DomSanitizer } from "@angular/platform-browser";
+import { MatIconRegistry } from "@angular/material";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = 'app';
+  constructor(
+    private iconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer
+  ) {
+    iconRegistry.addSvgIcon(
+      "list",
+      sanitizer.bypassSecurityTrustResourceUrl("assets/icons/list.svg")
+    );
+    iconRegistry.addSvgIcon(
+      "arrow-forward",
+      sanitizer.bypassSecurityTrustResourceUrl("assets/icons/arrow_forward.svg")
+    );
+  }
 }
