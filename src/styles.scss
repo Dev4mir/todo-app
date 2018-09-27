@@ -18,8 +18,19 @@ body {
 
   .app-name {
     text-align: center;
-    color: $white-color;
-    padding-bottom: 15px;
+  }
+}
+.app-name {
+  color: $white-color;
+  padding-bottom: 15px;
+
+  .list-icon {
+    width: 50px;
+    height: 50px;
+    vertical-align: top;
+  }
+  .name-text {
+    display: inline-block;
 
     h2 {
       margin-bottom: 0;

@@ -6,10 +6,34 @@
       "email": "amir@gmail.com",
       "password": "123",
       "token": "Ac95ew8rXcv7"
+    },
+    {
+      "name": "asd",
+      "email": "asd@asd.asd",
+      "password": "asd",
+      "token": "JpJSOrsw0FJA",
+      "id": 2
+    },
+    {
+      "name": "hey",
+      "email": "email@hey.com",
+      "password": "123",
+      "token": "2WYfAQ6SJuS6",
+      "id": 3
     }
   ],
   "todos": [
-    { "id": 1, "body": "some comment", "done": false, "UID": 1 },
-    { "id": 2, "body": "some comment22", "done": false, "UID": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "done": false,
+      "UID": 1
+    },
+    {
+      "id": 2,
+      "body": "some comment22",
+      "done": false,
+      "UID": 1
+    }
   ]
 }
