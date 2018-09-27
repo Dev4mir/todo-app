@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Router } from "@angular/router";
 
 import { User } from "../../interfaces/user";
 
@@ -8,16 +9,18 @@ import { User } from "../../interfaces/user";
 })
 export class AuthService {
   // the end point for API
-  private url: string = "http://localhost:3000";
+  private url: string = "http://localhost:3000/users";
   private token: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
+  // method to save the token
   public saveToken(token: string): void {
     localStorage.setItem("appToken", token);
     this.token = token;
   }
 
+  // generate token for every registed user
   public generateToken() {
     let text = "";
     let possible =
@@ -28,6 +31,7 @@ export class AuthService {
     return text;
   }
 
+  // get the token from browser local storage
   public getToken(): string {
     if (!this.token) {
       this.token = localStorage.getItem("appToken");
@@ -35,6 +39,7 @@ export class AuthService {
     return this.token;
   }
 
+  // check if there is a logged in user
   public isLoggedIn() {
     const token = this.getToken();
     if (token) {
@@ -44,9 +49,24 @@ export class AuthService {
     }
   }
 
+  // login method
   public login(user: User) {
     return this.http.get(
-      `${this.url}/users?email=${user.email}&password=${user.password}`
+      `${this.url}/?email=${user.email}&password=${user.password}`
     );
+  }
+
+  //register method
+  public register(user: User) {
+    //generate fake token for the user
+    user.token = this.generateToken();
+    return this.http.post(`${this.url}`, user);
+  }
+
+  // logout method
+  public logout() {
+    this.token = "";
+    localStorage.removeItem("appToken");
+    this.router.navigateByUrl("/login");
   }
 }

@@ -1,3 +1,23 @@
-<p>
-  signup works!
-</p>
+<div class="main-auth-div">
+  <div class="app-name">
+    <mat-icon class="list-icon" svgIcon="list"></mat-icon>
+    <div class="name-text">
+      <h2>TODO LIST</h2>
+      <p>Be more productive</p>
+    </div>
+  </div>
+  <div class="form-div">
+    <form class="todo-form" [formGroup]="signupForm" (ngSubmit)="signup()">
+      <input formControlName="name" placeholder="Name">
+      <input formControlName="email" placeholder="Email">
+      <input formControlName="password" placeholder="Password" type="password">
+      <button class="button-form success" [disabled]="!signupForm.valid">
+        Register
+        <span class="icon-round">
+          <mat-icon class="arrow-forward-icon" svgIcon="arrow-forward"></mat-icon>
+        </span>
+      </button>
+    </form>
+    <div class="form-footer">Have an account? <a class="another-option" routerLink="/login">Login here</a></div>
+  </div>
+</div>
