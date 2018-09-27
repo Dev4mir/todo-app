@@ -1,0 +1,9 @@
+{
+  "users": [
+    { "id": 1, "name": "amir", "email": "amir@gmail.com", "password": "123" }
+  ],
+  "todos": [
+    { "id": 1, "body": "some comment", "done": false, "UID": 1 },
+    { "id": 2, "body": "some comment22", "done": false, "UID": 1 }
+  ]
+}
