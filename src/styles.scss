@@ -91,19 +91,26 @@ app-signup {
         background-color: #8cc449bf;
       }
       .icon-round {
-        background-color: $white-color;
         color: $green-color;
-        border-radius: 50%;
-        float: right;
-        height: 20px;
-        width: 20px;
-        line-height: 20px;
+      }
+    }
+    &.cancel {
+      .icon-round {
+        color: #f44336;
+      }
+    }
+    .icon-round {
+      background-color: $white-color;
+      border-radius: 50%;
+      float: right;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
 
-        .arrow-forward-icon {
-          height: 13px;
-          width: 13px;
-          margin-left: 5px;
-        }
+      .arrow-forward-icon {
+        height: 13px;
+        width: 13px;
+        margin-left: 5px;
       }
     }
   }

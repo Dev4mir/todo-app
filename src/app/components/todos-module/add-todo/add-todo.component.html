@@ -1,6 +1,11 @@
 <form class="todo-form" [formGroup]="addTodoForm" (ngSubmit)="addTodo()">
   <input formControlName="body" placeholder="Task">
-  <button type="button" class="cancel" (click)="close()">Cancel</button>
+  <button type="button" class="cancel" (click)="close()">
+    Cancel
+    <span class="icon-round">
+      <mat-icon class="close-icon" svgIcon="close"></mat-icon>
+    </span>
+  </button>
   <button class="success" [disabled]="!addTodoForm.valid">
     Save
     <span class="icon-round">

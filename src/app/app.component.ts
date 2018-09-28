@@ -20,5 +20,9 @@ export class AppComponent {
       "arrow-forward",
       sanitizer.bypassSecurityTrustResourceUrl("assets/icons/arrow_forward.svg")
     );
+    iconRegistry.addSvgIcon(
+      "close",
+      sanitizer.bypassSecurityTrustResourceUrl("assets/icons/close.svg")
+    );
   }
 }
