@@ -15,20 +15,20 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   // method to save the token
-  public saveToken(token: string): void {
-    localStorage.setItem("appToken", token);
-    this.token = token;
+  public saveToken($token: string): void {
+    localStorage.setItem("appToken", $token);
+    this.token = $token;
   }
 
   // generate token for every registed user
   public generateToken() {
-    let text = "";
+    let token = "";
     let possible =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     for (let i = 0; i < 12; i++) {
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
+      token += possible.charAt(Math.floor(Math.random() * possible.length));
     }
-    return text;
+    return token;
   }
 
   // get the token from browser local storage
@@ -49,6 +49,7 @@ export class AuthService {
     }
   }
 
+  // Get the logged in user details when it's needed
   public getUserDetails() {
     if (this.isLoggedIn()) {
       return this.http.get(`${this.url}?token=${this.getToken()}`);
@@ -56,17 +57,17 @@ export class AuthService {
   }
 
   // login method
-  public login(user: User) {
+  public login($user: User) {
     return this.http.get(
-      `${this.url}/?email=${user.email}&password=${user.password}`
+      `${this.url}/?email=${$user.email}&password=${$user.password}`
     );
   }
 
   //register method
-  public register(user: User) {
+  public register($user: User) {
     //generate fake token for the user
-    user.token = this.generateToken();
-    return this.http.post(`${this.url}`, user);
+    $user.token = this.generateToken();
+    return this.http.post(this.url, $user);
   }
 
   // logout method

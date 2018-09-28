@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialogRef } from "@angular/material";
 import { FormBuilder, Validators } from "@angular/forms";
+import { MatSnackBar } from "@angular/material";
 
 import { TodoService } from "../../../services/todo/todo.service";
 
@@ -15,7 +16,8 @@ export class AddTodoComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<AddTodoComponent>,
     private fg: FormBuilder,
-    private todoService: TodoService
+    private todoService: TodoService,
+    public snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {}
@@ -28,17 +30,18 @@ export class AddTodoComponent implements OnInit {
   addTodo() {
     this.todoService.addTodo(this.addTodoForm.value).subscribe(
       res => {
-        console.log(res);
         this.newTodo = res;
       },
       err => console.log(err),
       () => {
         this.close();
+        this.snackBar.open("Todo added successfully");
       }
     );
   }
 
   close() {
+    // close the dialog and pass todo
     this.dialogRef.close(this.newTodo);
   }
 }

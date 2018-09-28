@@ -6,7 +6,9 @@ import { HttpClientModule } from "@angular/common/http";
 import {
   MatIconModule,
   MatCheckboxModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSnackBarModule,
+  MAT_SNACK_BAR_DEFAULT_OPTIONS
 } from "@angular/material";
 
 import { AppComponent } from "./app.component";
@@ -35,10 +37,13 @@ import { TodosComponent } from "./components/todos-module/todos/todos.component"
     HttpClientModule,
     MatIconModule,
     MatCheckboxModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   entryComponents: [AddTodoComponent],
-  providers: [],
+  providers: [
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2000 } }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

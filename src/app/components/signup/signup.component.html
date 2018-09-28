@@ -9,7 +9,7 @@
   <div class="form-div">
     <form class="todo-form" [formGroup]="signupForm" (ngSubmit)="signup()">
       <input formControlName="name" placeholder="Name">
-      <input formControlName="email" placeholder="Email">
+      <input formControlName="email" placeholder="Email" type="email">
       <input formControlName="password" placeholder="Password" type="password">
       <button class="button-form success" [disabled]="!signupForm.valid">
         Register

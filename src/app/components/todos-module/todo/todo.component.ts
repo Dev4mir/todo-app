@@ -9,7 +9,7 @@ import { Todo } from "../../../interfaces/todo";
   styleUrls: ["./todo.component.scss"]
 })
 export class TodoComponent implements OnInit {
-  // define the props that came pass from the parent element
+  // define the props that came from the parent element
   @Input()
   todo: Todo;
 
@@ -19,9 +19,11 @@ export class TodoComponent implements OnInit {
 
   doneTodo() {
     let todo = this.todo;
-    // change the done prop to be true
-    todo.done = true;
-
-    this.todoService.doneTodo(todo).subscribe(res => console.log(res));
+    // wait untill the transition for the checkbox finish
+    setTimeout(() => {
+      // change the done prop to be true
+      todo.done = true;
+      this.todoService.doneTodo(todo).subscribe();
+    }, 400);
   }
 }

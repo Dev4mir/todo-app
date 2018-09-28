@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: "",
     component: TodosComponent,
-    // add guard to make sure that route won't active untill the user is authenticated
+    // add guard to make sure that this route won't active untill the user is authenticated
     canActivate: [AuthGuard]
   }
 ];
