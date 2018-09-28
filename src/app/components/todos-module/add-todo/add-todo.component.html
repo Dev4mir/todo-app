@@ -1,3 +1,10 @@
-<p>
-  add-todo works!
-</p>
+<form class="todo-form" [formGroup]="addTodoForm" (ngSubmit)="addTodo()">
+  <input formControlName="body" placeholder="Task">
+  <button type="button" class="cancel" (click)="close()">Cancel</button>
+  <button class="success" [disabled]="!addTodoForm.valid">
+    Save
+    <span class="icon-round">
+      <mat-icon class="arrow-forward-icon" svgIcon="arrow-forward"></mat-icon>
+    </span>
+  </button>
+</form>

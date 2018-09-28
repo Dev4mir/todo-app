@@ -1,5 +1,6 @@
 $green-color: #8cc449;
 $white-color: #fff;
+$white-gray-color: #f3f2f2;
 
 .app-header {
   height: 70px;
@@ -41,5 +42,43 @@ $white-color: #fff;
     margin: 30px 0;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
       0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+    .item-header {
+      padding: 6px 10px;
+      color: $white-gray-color;
+      font-size: 15px;
+      border-bottom: 1px solid $white-gray-color;
+      text-transform: uppercase;
+
+      .add-todo {
+        float: right;
+        text-transform: uppercase;
+        background-color: $white-color;
+        color: $green-color;
+        font-size: 12px;
+        border: 0;
+        cursor: pointer;
+      }
+    }
+    .todo-items {
+      padding: 6px 10px;
+
+      .todo {
+        background-color: $white-color;
+        color: #000;
+        padding: 5px 8px;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+    }
+    &.done-items {
+      .todo-items {
+        .todo {
+          background-color: #f2f2f2;
+          color: #c3c3c3;
+          text-decoration: line-through;
+        }
+      }
+    }
   }
 }

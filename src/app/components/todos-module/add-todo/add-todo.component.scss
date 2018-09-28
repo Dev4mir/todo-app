@@ -1,0 +1,20 @@
+.todo-form {
+  button {
+    width: 48%;
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+
+    &.success {
+      margin-left: 4%;
+
+      &:not(:disabled) {
+        cursor: pointer;
+      }
+    }
+    &.cancel {
+      cursor: pointer;
+      background-color: #f44336;
+    }
+  }
+}

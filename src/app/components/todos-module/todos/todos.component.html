@@ -25,10 +25,29 @@
 <div class="container">
   <div class="row todos">
     <div class="col-6">
-      <div class="todo-items items"></div>
+      <div class="todo-items items">
+        <div class="item-header">
+          <span class="title">Todo Items</span>
+          <button class="add-todo" (click)="addTodo()">Add</button>
+        </div>
+        <div class="todo-items">
+          <div class="todo">
+            <app-todo todoBody="Here it is" [todoIsDone]="false"></app-todo>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-6">
-      <div class="done-items items"></div>
+      <div class="done-items items">
+        <div class="item-header">
+          <span class="title">Done Items</span>
+        </div>
+        <div class="todo-items">
+          <div class="todo">
+            <app-todo todoBody="Done one!!!" [todoIsDone]="true"></app-todo>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
