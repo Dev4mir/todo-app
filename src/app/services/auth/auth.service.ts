@@ -49,6 +49,12 @@ export class AuthService {
     }
   }
 
+  public getUserDetails() {
+    if (this.isLoggedIn()) {
+      return this.http.get(`${this.url}?token=${this.getToken()}`);
+    }
+  }
+
   // login method
   public login(user: User) {
     return this.http.get(

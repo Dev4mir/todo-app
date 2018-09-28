@@ -1,5 +1,4 @@
-<div class="todo">
-  <mat-checkbox *ngIf="!todoIsDone">
-  </mat-checkbox>
-  {{todoBody}}
+<div class="todo" [ngClass]="{'done': todo.done}">
+  <mat-checkbox *ngIf="!todo.done" (click)="doneTodo()"></mat-checkbox>
+  {{todo.body}}
 </div>

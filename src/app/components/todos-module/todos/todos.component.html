@@ -14,9 +14,10 @@
         <div class="logged-user">
           <img class="user-img" src="assets/profiledefault.png" alt="user-img">
           <div class="user-text">
-            <p class="name">Mohamed Atef</p>
-            <p class="email">atef@example.com</p>
+            <p class="name">{{user?.name}}</p>
+            <p class="email">{{user?.email}}</p>
           </div>
+          <button class="logout-btn" (click)="logout()">Logout</button>
         </div>
       </div>
     </div>
@@ -31,8 +32,8 @@
           <button class="add-todo" (click)="addTodo()">Add</button>
         </div>
         <div class="todo-items">
-          <div class="todo">
-            <app-todo todoBody="Here it is" [todoIsDone]="false"></app-todo>
+          <div class="todo" *ngFor="let todo of todos">
+            <app-todo *ngIf="!todo.done" [todo]="todo"></app-todo>
           </div>
         </div>
       </div>
@@ -43,8 +44,8 @@
           <span class="title">Done Items</span>
         </div>
         <div class="todo-items">
-          <div class="todo">
-            <app-todo todoBody="Done one!!!" [todoIsDone]="true"></app-todo>
+          <div class="todo" *ngFor="let todo of todos">
+            <app-todo *ngIf="todo.done" [todo]="todo"></app-todo>
           </div>
         </div>
       </div>

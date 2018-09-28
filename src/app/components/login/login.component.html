@@ -8,7 +8,7 @@
   </div>
   <div class="form-div">
     <form class="todo-form" [formGroup]="loginForm" (ngSubmit)="login()">
-      <input formControlName="email" placeholder="Email">
+      <input formControlName="email" placeholder="Email" autofocus>
       <input formControlName="password" placeholder="Password" type="password">
       <button class="button-form success" [disabled]="!loginForm.valid">
         Login
